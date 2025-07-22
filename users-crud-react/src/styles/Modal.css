@@ -1,0 +1,95 @@
+/* src/styles/Modal.css */
+
+.modal-overlay {
+  position: fixed; /* Fijo en la ventana de visualización */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente oscuro */
+  display: flex; /* Para centrar el contenido */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  padding: 3rem; /* Añadimos padding al overlay para que el modal no toque los bordes */
+  box-sizing: border-box; /* Aseguramos que el padding no cause desbordamiento */
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative; /* Para posicionar el botón de cerrar */
+  max-width: 90%; /* Ancho máximo para el contenido */
+  max-height: 90%; /* Altura máxima para el contenido */
+  overflow-y: auto; /* Scroll si el contenido es muy largo */
+
+  /* Ajustes clave para el tamaño */
+  width: auto; /* Permite que el contenido determine el ancho */
+  max-width: 500px; /* Ancho máximo, igual al formulario */
+  max-height: 90vh; /* ¡Máximo 90% del alto del viewport! */
+  overflow-y: auto; /* Permite scroll vertical si el contenido es largo */
+  box-sizing: border-box; /* Aseguramos que el padding no cause desbordamiento */
+
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #ef4444;
+  padding: 5px;
+  line-height: 1; /* Ajusta la altura de la línea para la 'x' */
+  font-weight: bold;
+}
+
+.modal-close-button:hover {
+  color: #dc2626;
+}
+.modal-close-button:focus {
+  outline: none; /* Elimina el borde de enfoque */
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.5); /* Sombra suave al enfocar */
+}
+/* Estilos para el contenido del modal de mensajes (éxito/error) */
+.message-modal-content {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+
+.message-icon {
+  width: 60px; /* Tamaño del icono */
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.message-modal-content.success .message-icon {
+  filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.4)); /* Sombra verde para éxito */
+}
+
+.message-modal-content.error .message-icon {
+  filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.4)); /* Sombra roja para error */
+}
+
+.message-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+  color: #333;
+}
+
+.message-text {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* El botón 'Aceptar' reutiliza btn-primary */
+.message-modal-content .btn-primary {
+  margin-top: 1rem; /* Margen para separar el botón del texto */
+  width: auto; /* Ajustar el ancho del botón */
+}
