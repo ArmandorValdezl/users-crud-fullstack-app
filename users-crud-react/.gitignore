@@ -1,24 +1,21 @@
-# Logs
-logs
+# Archivos y carpetas generados automáticamente por Node.js y npm
+node_modules/
+.env
+.env.local
+
+# Build artifacts de Vite (frontend)
+users-crud-react/dist/
+
+# Ignorar carpetas de módulos para cada subproyecto
+users-crud-react/node_modules/
+users-crud-backend/node_modules/
+
+# Archivos específicos de sistemas operativos
+.DS_Store
+Thumbs.db
+
+# Logs y archivos temporales
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
