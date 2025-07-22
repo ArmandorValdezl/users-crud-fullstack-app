@@ -14,7 +14,8 @@ const PORT = process.env.PORT || 3000; // El puerto en el que se ejecutará nues
 app.use(cors({
   origin: [
     'http://localhost:5173', // Para tu desarrollo local
-    'https://users-crud-fullstack-xw60hwrzz.vercel.app' // ¡Esta es la URL de tu frontend desplegado en Vercel!
+    'https://users-crud-fullstack-xw60hwrzz.vercel.app',
+    'users-crud-fullstack-app.vercel.app' // ¡Esta es la URL de tu frontend desplegado en Vercel!
   ], // Solo permite peticiones desde nuestro frontend
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'], // Métodos HTTP permitidos
   allowedHeaders: ['Content-Type', 'Authorization'], // Cabeceras permitidas
