@@ -4,6 +4,7 @@ import cors from 'cors';
 
 // Crear una instancia de la aplicación Express
 const app = express();
+// Render proveerá PORT, si no, usa 3000 localmente
 const PORT = process.env.PORT || 3000; // El puerto en el que se ejecutará nuestro servidor
 
 // 1. Configurar CORS
@@ -11,10 +12,15 @@ const PORT = process.env.PORT || 3000; // El puerto en el que se ejecutará nues
 // 'http://localhost:5173' es la dirección de nuestro frontend de Vite.
 // En producción, aquí iría la URL de tu aplicación desplegada (ej. 'https://my-react-app.vercel.app')
 app.use(cors({
-  origin: 'http://localhost:5173', // Solo permite peticiones desde nuestro frontend
+  origin: [
+    'http://localhost:5173', // Para tu desarrollo local
+    'https://users-crud-fullstack-xw60hwrzz.vercel.app' // ¡Esta es la URL de tu frontend desplegado en Vercel!
+  ], // Solo permite peticiones desde nuestro frontend
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'], // Métodos HTTP permitidos
   allowedHeaders: ['Content-Type', 'Authorization'], // Cabeceras permitidas
 }));
+
+
 
 // 2. Configurar el middleware para parsear JSON
 // Esto permite que nuestro servidor entienda los datos JSON que le enviemos desde el frontend
