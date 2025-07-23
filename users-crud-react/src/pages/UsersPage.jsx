@@ -148,9 +148,9 @@ const UsersPage = () => {
       <Modal isOpen={messageModal.isOpen} onClose={closeMessageModal}>
         <div className={`message-modal-content ${messageModal.type}`}> {/* Clase dinámica para tipo de mensaje */}
           {messageModal.type === 'success' ? (
-            <img src="/src/assets/checked.png" alt="Éxito" className="message-icon" /> // O un icono SVG/PNG
+            <img src="/checked.png" alt="Éxito" className="message-icon" /> // O un icono SVG/PNG
           ) : (
-            <img src="/src/assets/cancel.png" alt="Error" className="message-icon" /> // O un icono SVG/PNG
+            <img src="/cancel.png" alt="Error" className="message-icon" /> // O un icono SVG/PNG
           )}
           <h3 className="message-title">
             {messageModal.type === 'success' ? '¡Operación Exitosa!' : '¡Error!'}
