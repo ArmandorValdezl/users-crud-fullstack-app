@@ -11,15 +11,18 @@ const PORT = process.env.PORT || 3000; // El puerto en el que se ejecutará nues
 // Esto es CRUCIAL para que nuestro frontend de React pueda hacer peticiones.
 // 'http://localhost:5173' es la dirección de nuestro frontend de Vite.
 // En producción, aquí iría la URL de tu aplicación desplegada (ej. 'https://my-react-app.vercel.app')
-app.use(cors({
-  origin: [
-    'http://localhost:5173', // Para tu desarrollo local
-    'https://users-crud-fullstack-xw60hwrzz.vercel.app',
-    'users-crud-fullstack-app.vercel.app' // ¡Esta es la URL de tu frontend desplegado en Vercel!
-  ], // Solo permite peticiones desde nuestro frontend
-  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'], // Métodos HTTP permitidos
-  allowedHeaders: ['Content-Type', 'Authorization'], // Cabeceras permitidas
-}));
+
+app.use(cors()); //Simplemente llamar a cors() sin argumentos es lo más permisivo.
+
+// app.use(cors({
+//   origin: [
+//     'http://localhost:5173', // Para tu desarrollo local
+//     'https://users-crud-fullstack-xw60hwrzz.vercel.app',
+//     'users-crud-fullstack-app.vercel.app' // ¡Esta es la URL de tu frontend desplegado en Vercel!
+//   ], // Solo permite peticiones desde nuestro frontend
+//   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'], // Métodos HTTP permitidos
+//   allowedHeaders: ['Content-Type', 'Authorization'], // Cabeceras permitidas
+// }));
 
 
 
